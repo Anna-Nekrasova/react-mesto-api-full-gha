@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.100.77
+IP 51.250.100.77
 
 Frontend https://mesto.practicum.nomoredomains.work
 
