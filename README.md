@@ -11,6 +11,6 @@
 
 IP-адрес 51.250.100.77
 
-Frontend https://...
+Frontend https://mesto.practicum.nomoredomains.work
 
-Backend https://...
+Backend https://mesto.practicum.nomoredomains.work/api
