@@ -1,0 +1,17 @@
+.auth__text {
+    border: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 2px solid #ccc;
+    width: 358px;
+    margin: 0 auto;
+    color: #fff;
+    background-color: #000;
+}
+
+.auth__text:-webkit-autofill {
+    transition: all 5000s ease-in-out 0s;
+  }

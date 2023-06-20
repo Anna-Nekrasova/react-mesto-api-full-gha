@@ -1,0 +1,14 @@
+.header__auth_text {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
+    margin: 0 0 0 24px;
+    text-decoration: none;
+}
+
+.header__auth_text:hover {
+    opacity: 0.6;
+}

@@ -1,0 +1,4 @@
+.popup__form_invalid {
+    border-bottom: 1px solid #FF0000;
+    outline: none;
+}

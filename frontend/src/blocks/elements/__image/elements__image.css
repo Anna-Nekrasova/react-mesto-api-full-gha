@@ -1,0 +1,12 @@
+.elements__image {
+    object-fit: cover;
+    height: 282px;
+    width: 282px;
+    overflow: hidden;
+    object-position: center;
+    min-height: 282px;
+}
+
+.elements__image:hover {
+    cursor: pointer;
+}

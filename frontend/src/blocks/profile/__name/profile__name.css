@@ -1,0 +1,25 @@
+.profile__name {
+    display: flex;
+    width: 50vw;
+    max-width: 560px;
+}
+
+@media all and (max-width: 750px) {
+    .profile__name {
+       width: 47vw;
+    }
+} 
+
+@media all and (max-width: 670px) {
+    .profile__name {
+       width: 40vw;
+    }
+} 
+
+@media all and (max-width: 600px) {
+    .profile__name {
+        justify-content: center;
+        width: 90vw;
+        margin: 0 auto 0;
+    }
+} 
