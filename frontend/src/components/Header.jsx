@@ -5,15 +5,15 @@ function Header({ headerEmail, isLoggedIn, signOut }) {
     const { pathname } = useLocation();
 
     const to =
-        pathname === '/sign-up'
-            ? '/sign-in'
-            : pathname === '/sign-in'
-                ? '/sign-up'
+        pathname === '/signup'
+            ? '/signin'
+            : pathname === '/signin'
+                ? '/signup'
                 : '';
     const text =
-        pathname === '/sign-up'
+        pathname === '/signup'
             ? 'Войти'
-            : pathname === '/sign-in'
+            : pathname === '/signin'
                 ? 'Регистрация'
                 : '';
 

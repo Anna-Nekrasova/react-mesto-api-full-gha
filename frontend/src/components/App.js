@@ -116,7 +116,7 @@ function App() {
     mestoAuth.register(email, password)
       .then((res) => {
         setCurrentEmail(res.email);
-        navigate('/sign-in');
+        navigate('/signin');
         setIsSuccess(true);
         setRegistrationInfo("Вы успешно зарегестрировались!");
         setIsInfoToolTipOpen(true);
@@ -158,7 +158,7 @@ function App() {
   function signOut() {
     localStorage.removeItem('jwt');
     setIsLoggedIn(false);
-    navigate("/sign-in");
+    navigate("/signin");
     setCurrentEmail("");
   }
 
@@ -200,8 +200,8 @@ function App() {
             onCardDelete={handleCardDelete}
             isloggedIn={isLoggedIn} />}
           />
-          <Route path="/sign-up" element={<Register registerUser={registerUser} />} />
-          <Route path="/sign-in" element={<Login loginUser={loginUser} />} />
+          <Route path="/signup" element={<Register registerUser={registerUser} />} />
+          <Route path="/signin" element={<Login loginUser={loginUser} />} />
 
         </Routes>
 

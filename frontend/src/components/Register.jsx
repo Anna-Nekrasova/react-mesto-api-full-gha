@@ -25,7 +25,7 @@ function Register({ registerUser }) {
                 </div>
                 <button className="auth__save" type="submit">Зарегестрироваться</button>
             </form>
-            <Link to="/sign-in" className="auth__link">Уже зарегестрированы? Войти</Link>
+            <Link to="/signin" className="auth__link">Уже зарегестрированы? Войти</Link>
         </div>
     );
 }
