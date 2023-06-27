@@ -1,4 +1,4 @@
-export const BASE_URL = "https://mesto.practicum.nomoredomains.work/api";
+export const BASE_URL = "https://mesto.practicum.nomoredomains.work/api/";
 
 const makeRequest = (url, method, body, token) => {
     const options = {
