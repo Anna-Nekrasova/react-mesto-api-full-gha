@@ -30,7 +30,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
 
 app.use(requestLogger);
 
-app.get('/crash-test', () => {
+app.get('/api/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
@@ -38,14 +38,14 @@ app.get('/crash-test', () => {
 
 app.use(cors());
 
-app.post('/signin', celebrate({
+app.post('/api/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required(),
   }),
 }), login);
 
-app.post('/signup', celebrate({
+app.post('/api/signup', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required(),
@@ -55,8 +55,8 @@ app.post('/signup', celebrate({
   }),
 }), createUser);
 
-app.use('/', auth, routerUsers);
-app.use('/', auth, routerCards);
+app.use('/api/', auth, routerUsers);
+app.use('/api/', auth, routerCards);
 app.use('*', (req, res, next) => {
   next(new NotFoundError('Запрос на несуществующий роут.'));
 });
