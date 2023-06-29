@@ -88,6 +88,6 @@ export default class Api {
     }
 }
 
-const baseUrl = 'https://mesto.practicum.nomoredomains.work/api';
+const baseUrl = 'https://api.mesto.practicum.nomoreparties.sbs';
 const token = 'bcc1a74c-1889-44aa-90fb-64902ff81902';
 export const api = new Api(baseUrl, token);

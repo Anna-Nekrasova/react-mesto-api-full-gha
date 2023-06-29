@@ -13,4 +13,4 @@ IP 51.250.98.42
 
 Frontend https://mesto.practicum.nomoredomains.work
 
-Backend https://mesto.practicum.nomoredomains.work/api
+Backend https://api.mesto.practicum.nomoreparties.sbs
