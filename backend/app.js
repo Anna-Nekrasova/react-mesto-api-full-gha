@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const { celebrate, Joi } = require('celebrate');
 const { errors } = require('celebrate');
 const helmet = require('helmet');
-const cors = require('cors');
+const cors = require('./middlewares/cors');
 const routerCards = require('./routes/cards');
 const routerUsers = require('./routes/users');
 const { login, createUser } = require('./controllers/users');
@@ -36,7 +36,7 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-app.use(cors());
+app.use(cors);
 
 app.post('/signin', celebrate({
   body: Joi.object().keys({
