@@ -115,7 +115,6 @@ function App() {
   const registerUser = ({ email, password }) => {
     mestoAuth.register(email, password)
       .then((res) => {
-        setCurrentEmail(res.email);
         navigate('/signin');
         setIsSuccess(true);
         setRegistrationInfo("Вы успешно зарегестрировались!");
@@ -138,20 +137,26 @@ function App() {
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
+        setRegistrationInfo("Что-то пошло не так! Попробуйте еще раз.");
+        setIsInfoToolTipOpen(true);
       });
   }
 
   function checkToken() {
     if (localStorage.getItem('jwt')) {
       const jwt = localStorage.getItem('jwt');
+      console.log(jwt);
       mestoAuth.getUserData(jwt)
         .then((res) => {
           if (res) {
             setIsLoggedIn(true);
-            setCurrentEmail(res.data.email);
+            setCurrentEmail(res.email);
             navigate("/", { replace: true });
           }
         })
+        .catch((err) => {
+          console.log(`Ошибка: ${err}`);
+        });
     }
   }
 

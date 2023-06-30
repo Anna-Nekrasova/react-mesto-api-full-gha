@@ -1,12 +1,11 @@
 export default class Api {
-    constructor(baseUrl, token) {
+    constructor(baseUrl) {
         this._baseUrl = baseUrl;
-        this._token = token;
     }
 
     _getHeaders() {
         return {
-            authorization: this._token,
+            authorization: `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json',
         }
     }
@@ -19,7 +18,7 @@ export default class Api {
     }
 
     getDataUserInfo() {
-        const promise = fetch('https://nomoreparties.co/v1/cohort-61/users/me', {
+        const promise = fetch(`${this._baseUrl}/users/me`, {
             method: 'GET',
             headers: this._getHeaders(),
         })
@@ -89,5 +88,4 @@ export default class Api {
 }
 
 const baseUrl = 'https://api.mesto.practicum.nomoreparties.sbs';
-const token = 'bcc1a74c-1889-44aa-90fb-64902ff81902';
-export const api = new Api(baseUrl, token);
+export const api = new Api(baseUrl);
