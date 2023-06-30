@@ -1,5 +1,6 @@
 export const BASE_URL = "https://api.mesto.practicum.nomoreparties.sbs/";
 
+
 const makeRequest = (url, method, body, token) => {
     const options = {
         method,

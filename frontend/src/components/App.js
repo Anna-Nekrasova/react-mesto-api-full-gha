@@ -56,10 +56,12 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(id => id === currentUser._id);
+    debugger;
     api.deleteOrAddLikeCard(isLiked, card._id)
       .then((newCard) => {
-        setCardInfo((state) => state.map((c) => c._id === card._id ? newCard : c));
+        debugger;
+        setCardInfo((state) => state.map((c) => c._id === card._id ? newCard.data : c));
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
@@ -103,7 +105,8 @@ function App() {
 
   function handleUpdatePlaceSubmit({ title, link }) {
     api.sendDataCards(title, link)
-      .then((newCard) => {
+      .then((newCardData) => {
+        const newCard = newCardData.data;
         setCardInfo([newCard, ...cardInfo]);
         closeAllPopups();
       })
@@ -145,7 +148,6 @@ function App() {
   function checkToken() {
     if (localStorage.getItem('jwt')) {
       const jwt = localStorage.getItem('jwt');
-      console.log(jwt);
       mestoAuth.getUserData(jwt)
         .then((res) => {
           if (res) {
@@ -179,8 +181,8 @@ function App() {
         });
 
       api.getDataCards()
-        .then((cards) => {
-          setCardInfo(cards);
+        .then((cardsData) => {
+          setCardInfo(cardsData.data);
         })
         .catch((err) => {
           console.log(`Ошибка: ${err}`);

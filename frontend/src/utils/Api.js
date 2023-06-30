@@ -5,13 +5,14 @@ export default class Api {
 
     _getHeaders() {
         return {
-            authorization: `Bearer ${localStorage.getItem('token')}`,
+            authorization: `Bearer ${localStorage.getItem('jwt')}`,
             'Content-Type': 'application/json',
         }
     }
 
     _checkStatus(res) {
         if (res.ok) {
+            debugger;
             return res.json();
         }
         return Promise.reject(`Ошибка: ${res.status}`);
