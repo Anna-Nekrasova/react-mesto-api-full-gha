@@ -140,6 +140,7 @@ function App() {
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
+        setIsSuccess(false);
         setRegistrationInfo("Что-то пошло не так! Попробуйте еще раз.");
         setIsInfoToolTipOpen(true);
       });
